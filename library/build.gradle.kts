@@ -2,6 +2,7 @@ plugins {
     id("com.android.library")
     alias(libs.plugins.org.jetbrains.kotlin.android)
     id("kotlin-kapt")
+    id("maven-publish")
 }
 android {
     namespace = libs.versions.packageName.get()
@@ -36,4 +37,19 @@ dependencies {
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.material)
+}
+
+
+afterEvaluate {
+    publishing{
+        publications {
+            create<MavenPublication>("release") {
+                groupId = "com.github.ethaannn"
+                artifactId = "ImagePicker"
+                version = "1.0.0"
+                from(components["release"])
+            }
+
+        }
+    }
 }
