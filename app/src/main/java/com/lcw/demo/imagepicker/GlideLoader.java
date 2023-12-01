@@ -5,6 +5,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.request.RequestOptions;
+import com.ethan.imagepicker.demo.R;
 import com.lcw.library.imagepicker.utils.ImageLoader;
 
 /**
